@@ -34,34 +34,36 @@ body {
 }
 
 .layout-boxed {
-  background-color: @sidebar-light-bg;
+  background: url('@{boxed-layout-bg-image-path}') repeat fixed;
 }
 
 /*
  * Content Wrapper - contains the main content
+ * ```.right-side has been deprecated as of v2.0.0 in favor of .content-wrapper  ```
  */
 .content-wrapper,
+.right-side,
 .main-footer {
-  // Using disposable variable to join statements with a comma
+  //Using disposable variable to join statements with a comma
   @transition-rule: @transition-speed @transition-fn,
   margin @transition-speed @transition-fn;
   .transition-transform(@transition-rule);
   margin-left: @sidebar-width;
   z-index: 820;
-  // Top nav layout
+  //Top nav layout
   .layout-top-nav & {
     margin-left: 0;
   }
   @media (max-width: @screen-xs-max) {
     margin-left: 0;
   }
-  // When opening the sidebar on large screens
+  //When opening the sidebar on large screens
   .sidebar-collapse & {
     @media (min-width: @screen-sm) {
       margin-left: 0;
     }
   }
-  // When opening the sidebar on small screens
+  //When opening the sidebar on small screens
   .sidebar-open & {
     @media (max-width: @screen-xs-max) {
       .translate(@sidebar-width, 0);
@@ -69,9 +71,10 @@ body {
   }
 }
 
-.content-wrapper  {
+.content-wrapper,
+.right-side {
   min-height: 100%;
-  background-color: @content-bg;
+  background-color: @body-bg;
   z-index: 800;
 }
 
@@ -106,20 +109,16 @@ body {
       max-width: 100%;
     }
   }
-  .wrapper {
-    overflow: hidden;
-  }
 }
 
-.hold-transition {
+body.hold-transition {
   .content-wrapper,
   .right-side,
   .main-footer,
   .main-sidebar,
   .left-side,
   .main-header .navbar,
-  .main-header .logo,
-  .menu-open .fa-angle-left {
+  .main-header .logo {
     /* Fix for IE */
     .transition(none);
   }

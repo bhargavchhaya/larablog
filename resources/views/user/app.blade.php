@@ -11,9 +11,9 @@
 
 @include('user.layouts.header')
 
-    @section('main-content')
+@section('main-content')
 
-    @show
+@show
 
 @include('user.layouts.footer')
 

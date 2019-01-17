@@ -74,12 +74,22 @@
 }
 
 //Different radius each side
-.border-radius(@top-left,  @top-right,  @bottom-left,  @bottom-right)
+.border-radius(@top-left;
+@top-right
+;
+@bottom-left
+;
+@bottom-right
+)
 {
-  border-top-left-radius: @top-left;
-  border-top-right-radius: @top-right;
-  border-bottom-right-radius: @bottom-right;
-  border-bottom-left-radius: @bottom-left;
+  border-top-left-radius: @top-left
+;
+  border-top-right-radius: @top-right
+;
+  border-bottom-right-radius: @bottom-right
+;
+  border-bottom-left-radius: @bottom-left
+;
 }
 
 //Gradient background
@@ -130,13 +140,9 @@
       border-left: 3px solid transparent;
     }
     //Hover and active states
-    &:hover > a,
-    &.active > a,
-    &.menu-open > a {
+    &:hover > a, &.active > a {
       color: @sidebar-dark-hover-color;
       background: @sidebar-dark-hover-bg;
-    }
-    &.active > a {
       border-left-color: @link-hover-border-color;
     }
     //First Level Submenu
@@ -153,7 +159,7 @@
     }
   }
   //All submenus
-  .sidebar-menu .treeview-menu {
+  .treeview-menu {
     > li {
       > a {
         color: @sidebar-dark-submenu-color;
@@ -205,10 +211,7 @@
   }
   .content-wrapper,
   .main-footer {
-    //border-left: 1px solid @gray-lte;
-  }
-  .main-sidebar {
-    border-right: 1px solid @gray-lte;
+    border-left: 1px solid @gray-lte;
   }
   //User Panel (resides in the sidebar)
   .user-panel {
@@ -258,7 +261,7 @@
     }
   }
   //All submenus
-  .sidebar-menu .treeview-menu {
+  .treeview-menu {
     > li {
       > a {
         color: @sidebar-light-submenu-color;
