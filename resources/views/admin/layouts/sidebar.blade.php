@@ -27,6 +27,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li><a href="{{ route('post.index')}}"><i class="fa fa-circle-o"></i> Posts</a></li>
+        <li><a href="{{ route('section.index')}}"><i class="fa fa-circle-o"></i> Sections</a></li>
         <li><a href="{{ route('category.index')}}"><i class="fa fa-circle-o"></i> Categories</a></li>
         <li><a href="{{ route('tag.index')}}"><i class="fa fa-circle-o"></i> Tags</a></li>
         <li><a href="{{ route('user.index')}}"><i class="fa fa-circle-o"></i> Users</a></li>

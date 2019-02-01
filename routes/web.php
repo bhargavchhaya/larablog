@@ -29,6 +29,7 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/home',     'HomeController@index')->name('admin.home');
     Route::resource('admin/user',       'UserController');
     Route::resource('admin/post',       'PostController');
+    Route::resource('admin/section',    'SectionController');
     Route::resource('admin/tag',        'TagController');
     Route::resource('admin/category',   'CategoryController');
     //Admin Auth routes

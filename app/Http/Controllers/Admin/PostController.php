@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\user\post;
 use App\Model\user\tag;
 use App\Model\user\category;
+use App\Model\user\section;
 
 class PostController extends Controller
 {
@@ -104,8 +105,7 @@ class PostController extends Controller
             'title' => 'required',
             'subtitle' => 'required',
             'slug' => 'required',
-            'body' => 'required',
-            'image' => 'required',
+            'body' => 'required'
         ]);
         
         if ($request->hasFile('image')) {
@@ -117,7 +117,6 @@ class PostController extends Controller
         $post->subtitle = $request->subtitle;
         $post->slug = $request->slug;
         $post->body = $request->body;
-        $post->image = $imagename;
         $post->status = $request->status;
         $post->tags()->sync($request->tags);
         $post->categories()->sync($request->categories);
