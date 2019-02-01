@@ -32,8 +32,9 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{ route('post.update', $post->id) }}" method="POST">
-                        {{ csrf_field() }}
+                    <form role="form" action="{{ route('post.update', $post->id) }}" method="POST" enctype="multipart/form-data">
+
+0                        {{ csrf_field() }}
                         {{ method_field('PUT') }}
                         <div class="box-body">
                             <div class="col-md-6">

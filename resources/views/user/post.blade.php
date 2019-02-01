@@ -1,6 +1,6 @@
 @extends('user.app')
 
-@section('bg-img', asset('user/img/post-bg.jpg'))
+@section('bg-img', Storage::disk('local')->url($post->image) )
 
 @section('title', $post->title)
 
@@ -16,7 +16,7 @@
                 
                 @foreach ($post->categories as $category)
                 <small class="pull-right" style="margin-right: 20px;">
-                    {{ $category->name }}
+                    <p><a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a></p>
                 </small>        
                 @endforeach
                 
@@ -27,7 +27,7 @@
                    
                 @foreach ($post->tags as $tag)
                 <small class="pull-left" style="margin-right: 20px; border: 2px solid red; padding: 10px;">
-                    {{ $tag->name }}
+                    <p><a href="{{ route('tag', $tag->slug) }}">{{ $tag->name }}</a></p>
                 </small>        
                 @endforeach
                 
