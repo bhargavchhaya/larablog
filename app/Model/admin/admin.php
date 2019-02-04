@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Model\admin;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use Illuminate\Database\Eloquent\Model;
-
-class admin extends Model
+class admin extends Authenticatable
 {
-    //
+    use Notifiable;
 }

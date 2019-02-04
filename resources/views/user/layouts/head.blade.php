@@ -5,7 +5,8 @@
     <meta name="author" content="">
 
     <title>Clean Blog</title>
-
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">   
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('user/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 

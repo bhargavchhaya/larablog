@@ -16,6 +16,11 @@ class post extends Model
         return $this->belongsToMany('App\Model\user\category', 'category_posts')->withTimestamps();
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Model\user\Comments');
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

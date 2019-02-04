@@ -4,7 +4,7 @@
 <head>
 
    @include('user.layouts.head')
-
+   
 </head>
 
 <body>

@@ -54,10 +54,56 @@
                 </div>
             </div>
         </div>
-    </div>
-</article>
-
-<hr>
-
-
-@endsection
+        <div class="row">
+            <div class="col-md-8">
+                <div class="page-header">
+                    <h1><!--small class="pull-right">45 comments</small--> Comments </h1>
+                </div> 
+                <div class="comments-list" id="app">
+                    {{--
+                    <div class="media" v-for="comment in comments">
+                        <p class="pull-right"><small>@{{comment.created_at}}</small></p>
+                        <a class="media-left" href="#">
+                            <img src="http://lorempixel.com/40/40/people/1/">
+                        </a>
+                        <div class="media-body">
+                            
+                            <h4 class="media-heading user_name">@{{comment.name}}</h4>  
+                            @{{comment.message}}                  
+                            <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                        </div>
+                    </div>--}}
+                      @foreach ($comments as $comment)
+                        <div class="media">
+                            <p class="pull-right"><small>{{ $comment->created_at->diffForHumans() }}</small></p>
+                            <a class="media-left" href="#">
+                                <img src="http://lorempixel.com/40/40/people/1/">
+                            </a>
+                            <div class="media-body">
+                                
+                                <h4 class="media-heading user_name">{{ $comment->name }}</h4>  
+                                {{ $comment->message }}                    
+                                <p><small><a href="">Like</a> - <a href="">Share</a></small></p>
+                            </div>
+                        </div>
+                        @endforeach 
+                    </div>       
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+    @endsection
+    
+    {{--
+    @section('scripts')
+    <script>
+        $(document).ready(function(){
+            //$('#app')
+            alert('hi');
+            $.get("{{ route('comments',) }}", function (data) {
+                console.log(data);        
+            });
+        });
+    </script>
+    @endsection--}}

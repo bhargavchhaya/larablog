@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2019 at 09:51 AM
+-- Generation Time: Feb 04, 2019 at 12:42 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -38,6 +38,13 @@ CREATE TABLE `admins` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `name`, `email`, `password`, `phone`, `staus`, `created_at`, `updated_at`) VALUES
+(1, 'bhargav', 'bhargav.chhaya@ritetechnologies.net', '$2y$10$3W03ul0lumkABPlxnCmt9.0yKn4/qWewoC1VIGuybptMk0YvLu6mO', '9029619161', 1, '2019-02-05 10:34:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -374,6 +381,125 @@ INSERT INTO `category_posts` (`post_id`, `category_id`, `created_at`, `updated_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `name`, `message`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(2, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(3, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(4, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(5, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(6, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(7, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(8, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(9, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(10, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(11, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(12, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(13, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(14, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(15, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(16, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(17, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(18, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(19, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(20, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(21, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(22, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(23, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(24, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(25, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(26, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(27, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(28, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(29, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(30, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(31, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(32, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(33, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(34, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(35, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(36, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(37, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(38, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(39, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(40, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(41, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(42, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(43, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(44, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(45, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(46, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(47, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(48, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(49, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(50, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(51, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(52, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(53, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(54, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(55, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(56, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(57, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(58, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(59, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(60, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(61, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(62, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(63, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(64, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(65, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(66, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(67, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(68, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(69, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(70, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(71, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(72, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(73, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(74, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(75, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(76, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(77, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(78, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(79, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(80, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(81, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(82, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(83, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(84, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(85, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(86, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(87, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(88, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(89, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(90, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(91, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(92, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(93, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(94, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(95, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(96, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(97, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00'),
+(98, 'Wow! this is really great.', 'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', 'http://lorempixel.com/40/40/people/1/', '2019-02-01 13:00:00', '2019-02-01 13:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -399,7 +525,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2019_01_17_064650_create_roles_table', 1),
 (10, '2019_01_17_064749_create_admin_roles_table', 1),
 (11, '2019_02_01_063144_create_sections_table', 2),
-(12, '2019_02_01_072010_create_post_sections_table', 2);
+(12, '2019_02_01_072010_create_post_sections_table', 2),
+(13, '2019_02_01_115236_create_comments_table', 3),
+(14, '2019_02_01_115634_create_post_comments_table', 3);
 
 -- --------------------------------------------------------
 
@@ -558,6 +686,42 @@ INSERT INTO `posts` (`id`, `title`, `subtitle`, `slug`, `body`, `status`, `poste
 INSERT INTO `posts` (`id`, `title`, `subtitle`, `slug`, `body`, `status`, `posted_by`, `image`, `like`, `dislike`, `created_at`, `updated_at`) VALUES
 (102, 'Te eam atqui veniam eripuit. Usu no amet molestie verterem', 'Te eam atqui veniam eripuit. Usu no amet molestie verterem', 'Te eam atqui veniam eripuit. Usu no amet molestie verterem', '<p>Primis praesent sententiae his at, ponderum assueverit usu ut, cu eam rebum invenire mnesarchum. Duo ut zril deleniti delicata, qui ei malis minimum, meis molestiae intellegebat nec ne. Mel eu nulla utinam atomorum, tritani neglegentur est id, mei propriae dignissim ex. Oratio nostro pri at, duis tincidunt vim at. Ne consetetur adversarium ius, cum posse choro et, id his meis decore corrumpit. Sea sint choro legimus id, eu nulla consequat philosophia cum. Per cu doming utroque perfecto, sale dolorem nominavi est in.</p>\r\n\r\n<p>Te eam atqui veniam eripuit. Usu no amet molestie verterem, debet laboramus ullamcorper et mei, qui ut inciderint adversarium. Cum an integre antiopam laboramus. Ut nam persius consequuntur, ut mazim sapientem deseruisse vis. Has duis convenire no, quo te dico sadipscing, commodo senserit cu cum. Eu euripidis temporibus quo, ne qui iudicabit molestiae.</p>\r\n\r\n<p>Sit nibh epicuri ei, his ea reque mollis. Esse soleat alienum an est, an ius vocent quaerendum. Eum et choro sapientem. Constituam signiferumque vim ex. Ut assueverit referrentur eum.</p>\r\n\r\n<p>An eum mollis sanctus probatus. Nam te quidam iudicabit, mei te scripta platonem. Sanctus signiferumque has id, ea luptatum mediocritatem vix, te nibh munere usu. Iudico tation sea ad, et mel soleat albucius expetendis, argumentum dissentiunt ut est. Per ponderum suscipiantur an, ei libris quidam pro. Ad elit aliquip eum.</p>\r\n\r\n<p>Vel putant omnesque eu, vix at illum delectus dignissim. Te magna vitae concludaturque mei, ut decore legere dictas sed. Possim theophrastus et his, ad usu etiam sonet laoreet. Hinc appareat eu eam. Harum primis pri id.</p>\r\n\r\n<p>Nec congue decore scaevola in, exerci deserunt laboramus id sea. Cu duo maiorum ancillae delectus, justo epicuri eu pri, iisque voluptua sit eu. Cu errem vocent conceptam vix, ex usu vocibus legendos. His ea cibo iriure evertitur. Mea suas definiebas theophrastus at, et ludus possim eam.</p>\r\n\r\n<p>Vix at graeci melius concludaturque. Duo no alii sadipscing, his ad esse saperet periculis, cum dicunt lobortis at. Ea mea euismod liberavisse, ullum sapientem ex pro. Ad mei paulo latine repudiandae, convenire intellegebat sed ne.</p>\r\n\r\n<p>Aeque choro an nam, ut alii repudiare nam, his atqui vocent appellantur in. Mel id dicant recteque appellantur. Mel cu ancillae honestatis disputationi, ut pro viderer epicurei. Usu an prima sanctus assentior, id nulla fabulas rationibus vim. Equidem scripserit his ea.</p>\r\n\r\n<p>Et mel semper appareat. Nec facilis mediocritatem ne, in falli movet interpretaris pri, purto pertinax te nec. At veri reque commodo est. Pri no dico insolens inciderint, mea eu percipit perfecto. Commodo vivendum et ius, per dolor nostro apeirian at.</p>\r\n\r\n<p>Ut erat deserunt persecuti eam. Eos ex nonumy legimus. At vim modo vivendo, in mea etiam utinam. Nam in aliquip quaeque alterum, no nam delectus persequeris. Ex eos choro volumus adipisci, an eligendi voluptua vix. Vim viris interesset appellantur te, ius ad admodum vivendo consequuntur.</p>\r\n\r\n<p>Purto iisque contentiones est cu, ne quis postea quodsi nam, eu amet posse hendrerit mei. Ei erant laboramus mel. Qui et accusam accusata, odio possim accusamus no sea. Usu aeterno voluptaria dissentiunt in, dictas animal suscipit ex qui, his posse maiestatis an. Mel cu labitur hendrerit persequeris, laudem salutatus delicatissimi mel ne. Ea cibo animal efficiantur mea, ridens adipisci imperdiet mel in.</p>\r\n\r\n<p>Numquam reformidans nec et. Solet regione partiendo pri in, suscipit atomorum id qui. Praesent gubergren nec eu, in nam suas hinc facilisis, labores graecis deseruisse no has. Summo euripidis at pri, possit dictas percipit ex duo. Nobis laboramus sit id, impetus salutatus sed in. Cum te utinam repudiare.</p>\r\n\r\n<p>Vitae denique ad quo, no mea iuvaret pertinax, usu posse graeci ne. Officiis oportere posidonium ex his, sit an minimum ullamcorper, dico dicit eam an. Nonumy fierent interpretaris no pro, forensibus dissentias est ex, sit et purto audiam. Quo ut veritus ocurreret similique, brute integre ius ex. Wisi quodsi sea an, ea audiam eripuit nec. Ne admodum eligendi pri. In malorum honestatis omittantur quo, per no possit adolescens sadipscing.</p>\r\n\r\n<p>Eu omnis nihil adversarium vim. Accusam deleniti vituperata vim ut. Est ex etiam cotidieque. Epicurei phaedrum pri ex. Nam ad volutpat praesent eloquentiam, sed ea quis clita. In sea aliquip eloquentiam liberavisse.</p>\r\n\r\n<p>Ad hinc agam nostrud eam, nec quem simul at. Sea errem tollit oportere an. Iracundia necessitatibus nec ut. Tale legendos mei at, no inimicus sententiae sit.</p>\r\n\r\n<p>Vis at idque consequuntur. In nam simul dolores hendrerit, ei graeco vivendum vix. Ei labores graecis verterem nam, probo nominati intellegebat ad vix, ei falli patrioque est. Cum ut tibique sadipscing philosophia. Ex his nemore verear facilis, qui ea duis maluisset assentior, no modus timeam adversarium cum.</p>\r\n\r\n<p>Debitis adipiscing constituam et mea, cu unum augue aperiri qui. Ei quo legere menandri periculis, ut mei prompta laoreet legendos. Duo te saepe salutandi vituperatoribus, ea soluta tritani dissentiet mel. Qui harum dictas interpretaris ne, per sanctus evertitur id. Summo nominati eum te, ex nam etiam numquam. Eos sint propriae cu.</p>\r\n\r\n<p>Usu ex iusto quidam aperiri. Sed novum dicam oporteat in, per an minim antiopam, ea invenire petentium mel. Quando officiis mediocrem nec ea. Omnis graeco at mei. Ex duis autem vix, eu quo solet concludaturque. Ea audire cotidieque eos, vix illud ponderum ad.</p>\r\n\r\n<p>Sumo veri labore vis ex, cu quo quem dicta nonumes. Ei omnes utinam pericula usu, an has albucius nominavi. Nam nihil copiosae posidonium ex, ex ius facilis appetere democritum. Nec eu agam ubique delenit. Vis ea nulla meliore rationibus. Usu tollit neglegentur ea, vis no fierent ponderum deserunt.</p>\r\n\r\n<p>Enim imperdiet voluptatibus pri te. No facete quodsi intellegebat est. Erat saepe tantas mea ei, in brute vitae nonumy est. Duo liber accusam in. Mei habeo assum ocurreret ea, eos stet deseruisse disputando no.</p>', 1, NULL, 'public/eN3Ju6P0JrR8jDZO1rGYtOd6MC0u7FzFQTM5727t.jpeg', NULL, NULL, '2019-01-31 08:34:02', '2019-01-31 08:34:02'),
 (103, 'Id adolescens disputando eloquentiam eum', 'sdg sdg sdgds ds', 'Id adolescens disputando eloquentiam eum', '<p>Ex dicit ridens vix. Vidisse deseruisse his in, qui melius cetero eleifend ei. Latine similique nam te. Ad eum nisl labores, eam ad decore possit quaeque. Has an harum delicata vulputate.</p>\r\n\r\n<p>Id adolescens disputando eloquentiam eum, probo vocent torquatos ad sed. Vel ad exerci commodo dissentiunt, sumo vitae detraxit ut mei. Sumo porro scaevola mea an, cu sonet scaevola pro. Adolescens intellegebat mea an. Sea at ceteros feugait convenire.</p>\r\n\r\n<p>Dolor libris ne vim, mei ut enim ubique iracundia, homero altera ea nec. Ne facer deleniti nam, duo ea diam porro constituto, sed hinc natum iuvaret ut. Vix ei iudico expetenda liberavisse, sit ex ullum vivendum signiferumque. Dolorum nominavi insolens vim at. Nec omnium accusamus cu. His at utinam graeci, at vix consul democritum, sea ea eripuit sanctus.</p>\r\n\r\n<p>An mea quis sint, ius ne vide summo detracto, cum cu sonet simul detraxit. Vis et error tincidunt expetendis. Duo no falli error altera, mea eros probo discere ea. Mutat fastidii per an. Eos te latine debitis evertitur, vix ad alia esse postea, cu duo dicit commune expetenda.</p>\r\n\r\n<p>Ex nostro epicurei apeirian has, ut mel gloriatur concludaturque, ex petentium maiestatis constituam duo. Cum officiis euripidis consequuntur te, singulis quaerendum per cu. Ei meliore adversarium ius. Mei te nisl platonem, pri ei sint patrioque, meis accusam rationibus id eum.</p>\r\n\r\n<p>Mea sint vituperatoribus ne. Mazim reprimique eos ex, tollit soleat partem cu sea, vis eruditi facilisis ex. Luptatum rationibus his ei, duo ut dicam malorum. Postea aliquid omnesque te nam. Aliquid deserunt at ius.</p>\r\n\r\n<p>Ius cu congue scripta. Vis eu doming adipisci, oratio audiam insolens pri in. Qui nostro animal nostrud id. Quo ad esse vocibus.</p>\r\n\r\n<p>An aliquid nominavi volutpat vel, ne sint civibus eam. Nullam soluta his eu, in eam quaestio prodesset. Qui ut modus oratio, id vis iudico bonorum repudiandae. Et aperiri alienum vivendum his, usu facete possim ei. Cum ei diam meis, pri solum melius facilisi te.</p>\r\n\r\n<p>Quo nusquam molestie instructior et. Falli nihil mea at, autem sonet qui eu. Vis ea aeque adolescens. Ut vidit appareat fabellas quo, ea has erat apeirian assentior. Duis adhuc delectus no quo. Id errem persius definitionem cum. In enim aeque eos, per ne delectus iracundia.</p>\r\n\r\n<p>Mucius perfecto cum at. Odio ferri denique no vel, est ex vidisse dissentiet. Mei ex nibh posse, at utinam sadipscing vim. Aeterno omittam ut eum, et adhuc consul saperet sed. At eum quot fastidii detraxit, ne graecis suscipit tacimates vel, id pri justo scripta forensibus.</p>\r\n\r\n<p>Ne cum veniam feugait, alia ocurreret vis eu. Ius eu timeam insolens repudiandae, eu amet nihil sea. Est malorum debitis disputationi cu, quo ubique scripta lobortis et. Ius ad habemus postulant, omnis prima aliquid sed no. Sed aliquid comprehensam ea.</p>\r\n\r\n<p>Mei movet recteque inciderint ei, eu veritus legendos vis. Pri paulo meliore instructior at, quot referrentur at eos. Nibh ocurreret vis ea, odio aeterno platonem ne qui, ad eius populo sea. Mei agam urbanitas dissentias te, tantas impedit cotidieque ut qui. Eu graecis invidunt philosophia nam, et verear dolores fabellas nec, ne quidam numquam moderatius nam.</p>\r\n\r\n<p>Wisi sapientem reformidans vim ea. Ei discere conclusionemque eum, an ius augue perfecto expetenda. Dicit senserit ei has, ea sea reque altera verterem. Ei has agam case graeci, vitae facilis apeirian ut nam, quo id docendi epicuri inimicus. Putant legendos ea nam. Graece tractatos vix an, et ludus solet eam.</p>\r\n\r\n<p>Eu nam graeco malorum conclusionemque, te postea aperiam veritus per. Et per graeci maluisset, an sea suas suavitate necessitatibus. Elit soleat legimus qui ea. Mei ut nostrud percipit, ea mel diam autem tibique.</p>\r\n\r\n<p><img alt=\"dummy image\" src=\"https://pbs.twimg.com/profile_images/779305023507271681/GJJhYpD2_400x400.jpg\" style=\"height:400px; width:400px\" /></p>\r\n\r\n<p>Dolorum habemus mei te, cu vis diceret rationibus, nonumes recteque te sed. Te ius quas legimus veritus, gubergren maiestatis intellegebat sea no. Integre ocurreret vix ei, mel ne sonet doming electram. Ut est probo voluptatibus, audiam electram mel eu. Eum te persius adipisci scribentur.</p>\r\n\r\n<p>Feugait detracto mei an, movet iisque debitis eum et, ne reque fugit moderatius eum. Ius eu prima altera incorrupte, dictas quodsi mea ei. Cum populo definiebas elaboraret ne. Ipsum noluisse quo ne, sed oblique maiestatis cu, enim novum impetus an vel. Cu mei tempor dolorem persecuti, noster prompta bonorum an sed, qui docendi suscipit in.</p>\r\n\r\n<p>Error posidonium usu ei, vivendo officiis salutatus et nec. Vis ea saepe animal rationibus, ancillae molestie in cum. Suavitate neglegentur quo te. Adhuc sententiae vim id. Vis iusto causae percipitur no, odio sonet essent ex ius. Has inermis reprehendunt ut, ei vituperata adversarium voluptatibus sit.</p>\r\n\r\n<p>Tamquam facilisi ne eos. Vix inermis fastidii ne. Quis solum est id, autem propriae volutpat ne usu, tritani delicata consequat in vix. Dicit audiam utamur nam an. Eum no quod illum utinam, his ut posse sonet.</p>\r\n\r\n<p>Te cum dico repudiandae, ex oporteat philosophia eos. No cum omnis nemore similique. His phaedrum eleifend erroribus ne, prima adhuc omittam no mel. At mentitum tractatos nec, per nullam timeam accommodare ea. Ea sit nostrum explicari definitionem, liber possim patrioque te ius, in vel everti ancillae.</p>\r\n\r\n<p>Harum impedit phaedrum ex eam. Delenit euripidis te qui. In sea assueverit honestatis persequeris. Eu vix choro commodo, his legere ridens volumus ad, id sed mediocrem iudicabit.</p>', 1, NULL, 'public/6mFrNZcQfsXtxFNfd48vvHvE8BtqhS7Xw7zknqF2.jpeg', NULL, NULL, '2019-01-31 08:34:43', '2019-02-01 03:11:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_comments`
+--
+
+CREATE TABLE `post_comments` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `post_id` int(10) UNSIGNED NOT NULL,
+  `comment_id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `post_comments`
+--
+
+INSERT INTO `post_comments` (`id`, `post_id`, `comment_id`, `created_at`, `updated_at`) VALUES
+(1, 102, 1, NULL, NULL),
+(2, 102, 2, NULL, NULL),
+(3, 102, 3, NULL, NULL),
+(4, 102, 4, NULL, NULL),
+(5, 102, 5, NULL, NULL),
+(6, 102, 6, NULL, NULL),
+(7, 102, 7, NULL, NULL),
+(8, 102, 8, NULL, NULL),
+(9, 102, 9, NULL, NULL),
+(10, 102, 10, NULL, NULL),
+(11, 102, 11, NULL, NULL),
+(12, 102, 12, NULL, NULL),
+(13, 102, 13, NULL, NULL),
+(14, 102, 14, NULL, NULL),
+(15, 102, 15, NULL, NULL),
+(16, 102, 16, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1022,7 +1186,13 @@ INSERT INTO `sections` (`id`, `title`, `image`, `body`, `status`, `created_at`, 
 (1, 'Contrary to popular belief, Lorem Ipsum is not simply random text.', 'public/7QsUbnvrbDzNDsbJ84sUR8W6pit6DQphUkFfVuWH.jpeg', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>', 1, '2019-02-01 02:22:04', '2019-02-01 02:22:04'),
 (2, 'There are many variations of passages of Lorem Ipsum available', 'public/jQrlybduYpi1uf8hYsdOGVLMheGOvA40pW5W7UAI.jpeg', '<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#39;t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,</p>', 1, '2019-02-01 02:22:52', '2019-02-01 02:22:52'),
 (3, 'The standard chunk of Lorem Ipsum used since the 1500s', 'public/twLiel0DEmDS2LckEAFml4u7ULpv2nemanIbvZwr.jpeg', '<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from &quot;de Finibus Bonorum et Malorum&quot; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>', 1, '2019-02-01 02:23:13', '2019-02-01 02:23:13'),
-(4, 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary', 'public/XgOivCNJuQGXtGpKwtc4LeQ87kzGgsyvD9z9B8AD.jpeg', '<p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>', 1, '2019-02-01 02:23:44', '2019-02-01 02:23:44');
+(4, 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary', 'public/XgOivCNJuQGXtGpKwtc4LeQ87kzGgsyvD9z9B8AD.jpeg', '<p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>', 1, '2019-02-01 02:23:44', '2019-02-01 02:23:44'),
+(5, 'Contrary to popular belief, Lorem Ipsum is not simply random text.', 'public/7QsUbnvrbDzNDsbJ84sUR8W6pit6DQphUkFfVuWH.jpeg', '<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>', 1, '2019-02-01 02:22:04', '2019-02-01 02:22:04'),
+(6, 'There are many variations of passages of Lorem Ipsum available', 'public/jQrlybduYpi1uf8hYsdOGVLMheGOvA40pW5W7UAI.jpeg', '<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&#39;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&#39;t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,</p>', 1, '2019-02-01 02:22:52', '2019-02-01 02:22:52'),
+(7, 'The standard chunk of Lorem Ipsum used since the 1500s', 'public/twLiel0DEmDS2LckEAFml4u7ULpv2nemanIbvZwr.jpeg', '<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from &quot;de Finibus Bonorum et Malorum&quot; by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>', 1, '2019-02-01 02:23:13', '2019-02-01 02:23:13'),
+(8, 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary', 'public/XgOivCNJuQGXtGpKwtc4LeQ87kzGgsyvD9z9B8AD.jpeg', '<p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>', 1, '2019-02-01 02:23:44', '2019-02-01 02:23:44'),
+(9, 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary', 'public/XgOivCNJuQGXtGpKwtc4LeQ87kzGgsyvD9z9B8AD.jpeg', '<p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>', 1, '2019-02-01 02:23:44', '2019-02-01 02:23:44'),
+(10, 'All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary', 'public/XgOivCNJuQGXtGpKwtc4LeQ87kzGgsyvD9z9B8AD.jpeg', '<p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>', 1, '2019-02-01 02:23:44', '2019-02-01 02:23:44');
 
 -- --------------------------------------------------------
 
@@ -1076,7 +1246,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'bhargav', 'chhayabhomit@gmail.com', NULL, '$2y$10$3W03ul0lumkABPlxnCmt9.0yKn4/qWewoC1VIGuybptMk0YvLu6mO', 'WFVw0Jd5fbwWv8AJUN9gswYvqjMhKdynDQJH0DnCOKHdNdbFe8jECGrUEmLN', '2019-01-31 00:51:06', '2019-01-31 00:51:06');
+(1, 'bhargav', 'chhayabhomit@gmail.com', NULL, '$2y$10$3W03ul0lumkABPlxnCmt9.0yKn4/qWewoC1VIGuybptMk0YvLu6mO', 'eLFG7FyIeL4EvrJIA82XWn0OYr7EGXskyWN1nG21j8JJpioslTfdXzaFDmkF', '2019-01-31 00:51:06', '2019-01-31 00:51:06');
 
 --
 -- Indexes for dumped tables
@@ -1109,6 +1279,12 @@ ALTER TABLE `category_posts`
   ADD KEY `category_posts_category_id_index` (`category_id`);
 
 --
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -1125,6 +1301,14 @@ ALTER TABLE `password_resets`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `post_comments`
+--
+ALTER TABLE `post_comments`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `post_comments_post_id_index` (`post_id`),
+  ADD KEY `post_comments_comment_id_index` (`comment_id`);
 
 --
 -- Indexes for table `post_sections`
@@ -1175,7 +1359,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `admin_roles`
@@ -1190,16 +1374,28 @@ ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+
+--
+-- AUTO_INCREMENT for table `post_comments`
+--
+ALTER TABLE `post_comments`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `post_sections`
@@ -1223,7 +1419,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sections`
 --
 ALTER TABLE `sections`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tags`
@@ -1246,6 +1442,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `category_posts`
   ADD CONSTRAINT `category_posts_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `post_comments`
+--
+ALTER TABLE `post_comments`
+  ADD CONSTRAINT `post_comments_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `post_sections`

@@ -25,6 +25,7 @@ Route::group(['namespace' => 'User'], function(){
 
 //Admin routes
 
+//Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function(){
 Route::group(['namespace' => 'Admin'], function(){
     Route::get('admin/home',     'HomeController@index')->name('admin.home');
     Route::resource('admin/user',       'UserController');
@@ -40,3 +41,9 @@ Route::group(['namespace' => 'Admin'], function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/getComments', function(){
+    if (Request::ajax()) {
+        return 'Ajax Request Loaded';
+    }
+});

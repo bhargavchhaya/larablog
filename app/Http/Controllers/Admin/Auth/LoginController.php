@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'admin/home';
 
     /**
      * Create a new controller instance.
@@ -37,7 +37,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
     }
 
     public function showLoginForm(){
@@ -50,6 +50,11 @@ class LoginController extends Controller
             return $this->sendLoginResponse($request);
         }
         return $this->sendFailedLoginResponse($request);
+    }
+
+    public function guard()
+    {
+        return Auth::guard('admin');
     }
 
 }
