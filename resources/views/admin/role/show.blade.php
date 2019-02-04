@@ -9,14 +9,8 @@
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>users<small> User</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
+    <section class="content-header">      
+      
     </section>
 
     <!-- Main content -->
@@ -25,10 +19,10 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
+          <h3 class="box-title">Roles</h3>
 
           <div class="box-tools pull-right">
-            <a href="{{ route('user.create') }}" class="btn btn-success">Add New</a>
+            <a href="{{ route('role.create') }}" class="btn btn-success">Add New</a>
             <button type="button" class="btn btn-primary" data-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fa fa-minus"></i></button>
           </div>
@@ -38,25 +32,25 @@
               <thead>
               <tr>
                 <th>Sr. No.</th>
-                <th>user Name</th>
+                <th>Role Name</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
               </thead>
               <tbody>
-                @foreach ($users as $user)
+                @foreach ($roles as $role)
                   <tr>
                     <td>{{ $loop->index + 1 }}</td>
-                    <td>{{ $user->name }}</td>                    
-                    <td><a href="{{ route('user.edit', $user->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td>{{ $role->name }}</td>
+                    <td><a href="{{ route('role.edit', $role->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <td>
-                        <form id="delete-form-{{ $user->id }}" action="{{ route('user.destroy', $user->id) }}" style="display:none;" method="POST">
+                        <form id="delete-form-{{ $role->id }}" action="{{ route('role.destroy', $role->id) }}" style="display:none;" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                         </form>
                         <a href="" onclick="if (confirm('Are you sure you want to Delete ?')) {
                           event.preventDefault(); 
-                          document.getElementById('delete-form-{{ $user->id }}').submit();
+                          document.getElementById('delete-form-{{ $role->id }}').submit();
                         }else{
                           event.preventDefault();
                         }" ><span class="glyphicon glyphicon-trash"></span></a>
@@ -66,7 +60,7 @@
               <tfoot>
                 <tr>
                   <th>Sr. No.</th>
-                  <th>user Name</th>
+                  <th>Role Name</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>
