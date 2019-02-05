@@ -27,10 +27,19 @@
             <form permission="form" action="{{ route('permission.store') }}" method="POST">
                 {{ csrf_field() }}
             <div class="box-body">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group">
                     <label for="name">Permission Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Permission">
+                </div>
+                <div class="form-group">
+                    <label for="forcol">Permission For</label>
+                    <select name="forcol" id="forcol" class="form-control">
+                        <option selected disable>Select Permission For</option>
+                        <option value="user">User</option>
+                        <option value="post">Post</option>
+                        <option value="other">Other</option>
+                    </select>
                 </div>
                 <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>

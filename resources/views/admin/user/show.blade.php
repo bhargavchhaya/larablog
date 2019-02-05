@@ -9,15 +9,7 @@
  <!-- Content Wrapper. Contains page content -->
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>users<small> User</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
-      </ol>
-    </section>
+    @include('admin.layouts.pageHead')
 
     <!-- Main content -->
     <section class="content">
@@ -34,11 +26,13 @@
           </div>
         </div>
         <div class="box-body">
+          @include('includes.messages')
             <table id="example1" class="table table-bordered table-striped">
               <thead>
               <tr>
                 <th>Sr. No.</th>
-                <th>user Name</th>
+                <th>User Name</th>
+                <th>Roles</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
@@ -47,7 +41,12 @@
                 @foreach ($users as $user)
                   <tr>
                     <td>{{ $loop->index + 1 }}</td>
-                    <td>{{ $user->name }}</td>                    
+                    <td>{{ $user->name }}</td>   
+                    <td>
+                      @foreach ($user->roles as $role)
+                      {{ $role->name }},
+                      @endforeach  
+                    </td>                     
                     <td><a href="{{ route('user.edit', $user->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                     <td>
                         <form id="delete-form-{{ $user->id }}" action="{{ route('user.destroy', $user->id) }}" style="display:none;" method="POST">
@@ -66,7 +65,8 @@
               <tfoot>
                 <tr>
                   <th>Sr. No.</th>
-                  <th>user Name</th>
+                  <th>User Name</th>
+                  <th>Roles</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>

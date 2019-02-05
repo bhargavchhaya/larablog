@@ -2,8 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; {{ Carbon\carbon::now()->year }}. All rights reserved.
 </footer>
 <!-- jQuery 2.2.3 -->
 <script src="{{ asset('admin/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>

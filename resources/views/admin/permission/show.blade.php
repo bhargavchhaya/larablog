@@ -9,9 +9,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
-  <section class="content-header">      
-    
-  </section>
+  @include('admin.layouts.pageHead')
   
   <!-- Main content -->
   <section class="content">
@@ -36,6 +34,7 @@
               <tr>
                 <th>Sr. No.</th>
                 <th>Permission</th>
+                <th>For</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
@@ -45,6 +44,7 @@
               <tr>
                 <td>{{ $loop->index + 1 }}</td>
                 <td>{{ $permission->name }}</td>
+                <td>{{ $permission->forcol }}</td>
                 <td><a href="{{ route('permission.edit', $permission->id) }}"><span class="glyphicon glyphicon-edit"></span></a></td>
                 <td>
                   <form id="delete-form-{{ $permission->id }}" action="{{ route('permission.destroy', $permission->id) }}" style="display:none;" method="POST">
@@ -64,6 +64,7 @@
                 <tr>
                   <th>Sr. No.</th>
                   <th>Permission</th>
+                  <th>For</th>
                   <th>Edit</th>
                   <th>Delete</th>
                 </tr>

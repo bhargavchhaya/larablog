@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2019 at 04:17 PM
+-- Generation Time: Feb 05, 2019 at 10:47 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -34,7 +34,7 @@ CREATE TABLE `admins` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `staus` tinyint(1) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -43,22 +43,33 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `name`, `email`, `password`, `phone`, `staus`, `created_at`, `updated_at`) VALUES
-(1, 'bhargav', 'bhargav.chhaya@ritetechnologies.net', '$2y$10$3W03ul0lumkABPlxnCmt9.0yKn4/qWewoC1VIGuybptMk0YvLu6mO', '9029619161', 1, '2019-02-05 10:34:00', NULL);
+INSERT INTO `admins` (`id`, `name`, `email`, `password`, `phone`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'bhargav', 'bhargav.chhaya@ritetechnologies.net', '$2y$10$3W03ul0lumkABPlxnCmt9.0yKn4/qWewoC1VIGuybptMk0YvLu6mO', '9029619161', 1, '2019-02-05 10:34:00', '2019-02-05 03:47:48'),
+(3, 'Devang', 'abc@gmail.com', '$2y$10$ImzEkHL0d.G2XQuKHIyN6eSigrLqj1.U8mETenBg.dVVjiq0Oyq12', '9879879870', 1, '2019-02-05 02:55:35', '2019-02-05 03:43:44');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_roles`
+-- Table structure for table `admin_role`
 --
 
-CREATE TABLE `admin_roles` (
+CREATE TABLE `admin_role` (
   `id` int(10) UNSIGNED NOT NULL,
   `admin_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admin_role`
+--
+
+INSERT INTO `admin_role` (`id`, `admin_id`, `role_id`, `created_at`, `updated_at`) VALUES
+(1, 3, 3, NULL, NULL),
+(3, 1, 1, NULL, NULL),
+(4, 1, 2, NULL, NULL),
+(5, 1, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -551,6 +562,7 @@ CREATE TABLE `password_resets` (
 CREATE TABLE `permissions` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `forcol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -559,8 +571,14 @@ CREATE TABLE `permissions` (
 -- Dumping data for table `permissions`
 --
 
-INSERT INTO `permissions` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(2, 'Post-Create', '2019-02-04 09:33:20', '2019-02-04 09:46:11');
+INSERT INTO `permissions` (`id`, `name`, `forcol`, `created_at`, `updated_at`) VALUES
+(3, 'Post-Create', 'post', '2019-02-05 00:57:26', '2019-02-05 00:57:26'),
+(4, 'Post-Update', 'post', '2019-02-05 00:58:45', '2019-02-05 00:58:45'),
+(5, 'Post-Delete', 'post', '2019-02-05 00:59:00', '2019-02-05 00:59:00'),
+(6, 'User-Create', 'user', '2019-02-05 00:59:13', '2019-02-05 00:59:13'),
+(7, 'User-Update', 'user', '2019-02-05 00:59:33', '2019-02-05 00:59:33'),
+(8, 'User-Delete', 'user', '2019-02-05 00:59:46', '2019-02-05 00:59:46'),
+(9, 'Post-Publish', 'post', '2019-02-05 01:00:59', '2019-02-05 01:00:59');
 
 -- --------------------------------------------------------
 
@@ -572,6 +590,19 @@ CREATE TABLE `permission_role` (
   `role_id` int(11) NOT NULL,
   `permission_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `permission_role`
+--
+
+INSERT INTO `permission_role` (`role_id`, `permission_id`) VALUES
+(1, 3),
+(1, 4),
+(1, 5),
+(2, 9),
+(2, 5),
+(3, 3),
+(3, 4);
 
 -- --------------------------------------------------------
 
@@ -1301,9 +1332,9 @@ ALTER TABLE `admins`
   ADD UNIQUE KEY `admins_email_unique` (`email`);
 
 --
--- Indexes for table `admin_roles`
+-- Indexes for table `admin_role`
 --
-ALTER TABLE `admin_roles`
+ALTER TABLE `admin_role`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1406,13 +1437,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `admin_roles`
+-- AUTO_INCREMENT for table `admin_role`
 --
-ALTER TABLE `admin_roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `admin_role`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -1436,7 +1467,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -1466,7 +1497,7 @@ ALTER TABLE `post_tags`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sections`

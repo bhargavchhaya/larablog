@@ -10,7 +10,7 @@
  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">      
-      
+      @include('admin.layouts.pageHead')
     </section>
 
     <!-- Main content -->
